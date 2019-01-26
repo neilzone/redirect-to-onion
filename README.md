@@ -7,8 +7,10 @@ It puts the RewriteConditions into your site's .htaccess file. You could also pu
 
 Save the script into your chosen directory (outside your webroot), and then set a cronjob to run it. For example:
 
+<code>
 crontab -e
 
 10 * * * * /bin/bash/ /path/to/your/script/tor_redirect.sh >/dev/null 2>&1
+</code>
 
-(This will run it every hour, every day, at 10 minutes past the hour.)
+(This will download a new list of Tor exit nodes every hour, every day, at 10 minutes past the hour.)

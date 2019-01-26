@@ -1,12 +1,13 @@
-#!/bin/bash
+#Treat this as if it were in the public domain, until such time as it is.
 
+#!/bin/bash
 
 #Complete the variables first:
 
 #Add the IP of your public-facing server. This is used to download the list of Tor exits nodes from Tor Project.
 SERVERIP="1.2.3.4"
 
-#Add the path to your .htaccess file. This is probably your webroot.
+#Add the path to your .htaccess file (including the /.htaccess at the end). This is probably your webroot.
 HTACCESS="/path/to/your/.htaccess"
 
 #Add your .onion domain, to which you want your main site to redirect.

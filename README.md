@@ -10,7 +10,7 @@ Save the script into your chosen directory (outside your webroot), and then set 
 <code>
 crontab -e
 
-10 * * * * /bin/bash/ /path/to/your/script/tor_redirect.sh >/dev/null 2>&1
+10 * * * * /bin/bash /path/to/your/script/tor_redirect.sh >/dev/null 2>&1
 </code>
 
 (This will download a new list of Tor exit nodes every hour, every day, at 10 minutes past the hour.)

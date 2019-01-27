@@ -21,7 +21,7 @@ if /bin/ping -c 1 check.torproject.org &> /dev/null; then
 
 sed -in '/#\ TOR-REDIRECT-BLOCK/,/#\ END-TOR-REDIRECT-BLOCK/d' $HTACCESS
 wget -q -O - "https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=$SERVERIP"| sed '/^\#/d' | sed "s/^/RewriteCond %{REMOTE_ADDR} ^/g; s/\./\\\./g; s/$/\$ \[OR\] /g; 1i# TOR-REDIRECT-BLOCK" >> $HTACCESS
-echo "Updated on $UPDATEDATE at $UPDATETIME" >> $HTACCESS
+echo "#Updated on $UPDATEDATE at $UPDATETIME" >> $HTACCESS
 echo "RewriteCond %{REMOTE_ADDR} ^0\.0\.0\.0$" >> $HTACCESS
 echo "RewriteRule ^/?(.*) $ONION/\$1 [L,R,NE]" >> $HTACCESS
 echo "# END-TOR-REDIRECT-BLOCK" >> $HTACCESS
